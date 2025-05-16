@@ -32,50 +32,23 @@ function SkillPage() {
     ],
   };
 
-  // Chart options
-  // const options = {
-  //   responsive: true,
-  //   plugins: {
-  //     legend: {
-  //       position: 'top',
-  //     },
-  //     title: {
-  //       display: true,
-  //       text: 'Monthly Sales Chart',
-  //     },
-  //   },
-  // };
+  
 
   return (<>
   <div style={{ position: "relative" }}>
       {/* Left Arrow for Previous Page */}
       <button
-        style={{
-          position: "absolute",
-          left: "10px",
-          top: "40vh",
-          transform: "translateY(-50%)",
-          fontSize: "24px",
-          cursor: "pointer",
-        }}
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-md hover:bg-gray-100 z-10"
         onClick={goToPreviousPage}
       >
-      <TbSquareRoundedArrowLeft/>
+        <TbSquareRoundedArrowLeft size={32} />
       </button>
-      {/* Right Arrow for Next Page */}
+
       <button
-        style={{
-          position: "absolute",
-          right: "10px",
-          top: "40vh",
-          transform: "translateY(-50%)",
-          fontSize: "24px",
-          cursor: "pointer",
-        }}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-md hover:bg-gray-100 z-10"
         onClick={goToNextPage}
       >
-        <TbSquareRoundedArrowRight/>
-        {/* Right Arrow Symbol */}
+        <TbSquareRoundedArrowRight size={32} />
       </button>
 
 

@@ -23,35 +23,19 @@ const goToNextPage = () => {
     <div>
 
 <div style={{ position: "relative" }}>
-      {/* Left Arrow for Previous Page */}
+       
       <button
-        style={{
-          position: "absolute",
-          left: "10px",
-          top: "40vh",
-          transform: "translateY(-50%)",
-          fontSize: "24px",
-          cursor: "pointer",
-        }}
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-md hover:bg-gray-100 z-10"
         onClick={goToPreviousPage}
       >
-      <TbSquareRoundedArrowLeft/>
+        <TbSquareRoundedArrowLeft size={32} />
       </button>
 
-      {/* Right Arrow for Next Page */}
       <button
-        style={{
-          position: "absolute",
-          right: "10px",
-          top: "40vh",
-          transform: "translateY(-50%)",
-          fontSize: "24px",
-          cursor: "pointer",
-        }}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-md hover:bg-gray-100 z-10"
         onClick={goToNextPage}
       >
-        <TbSquareRoundedArrowRight/>
-        {/* Right Arrow Symbol */}
+        <TbSquareRoundedArrowRight size={32} />
       </button>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl p-8">
