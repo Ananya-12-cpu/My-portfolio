@@ -9,41 +9,46 @@ function PortfolioBanner() {
   const router = useRouter();
 
   return (
-    <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl p-8">
-        <div className="flex flex-col justify-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-3">
-            Hey, I&apos;m <span className="text-indigo-600">Ananya</span>
-          </h1>
-          <p className="mt-6 text-gray-400 text-sm max-w-lg">
-            Crafting Engaging Digital Experiences. Transform your vision into
-            reality with beautifully designed, high-performance websites.
-            Whether it&apos;s a sleek portfolio, an e-commerce platform, or a
-            business solution, I specialize in creating seamless digital
-            experiences across all devices. Let&apos;s collaborate and build
-            something amazing!
-          </p>
-          {/* Buttons Section */}
-          <div className="mt-10 space-x-4">
-         
-         
-             {/* <a href="/resume.pdf" download>
-              <SolidButton text="Get Resume" />
-            </a> */}
-            <OutlineButton
-              text="My Skills"
-              RenderFunction={() => router.push("/skill")}
+    <div className="min-h-screen flex items-center bg-gradient-to-b from-gray-900 to-gray-800">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column - Text Content */}
+          <div className="flex flex-col space-y-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
+              Hey, I&apos;m{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">
+                Ananya
+              </span>
+            </h1>
+            <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl">
+              Crafting Engaging Digital Experiences. Transform your vision into
+              reality with beautifully designed, high-performance websites.
+              Whether it&apos;s a sleek portfolio, an e-commerce platform, or a
+              business solution, I specialize in creating seamless digital
+              experiences across all devices. Let&apos;s collaborate and build
+              something amazing!
+            </p>
+            {/* Buttons Section */}
+            <div className="flex flex-wrap gap-4 pt-4">
+              <OutlineButton
+                text="My Skills"
+                RenderFunction={() => router.push("/skill")}
+              />
+            
+            </div>
+          </div>
+
+          {/* Right Column - Image */}
+          <div className="relative w-full h-[400px] lg:h-[500px]">
+            <Image
+              src="/images/user.png"
+              alt="Picture of the author"
+              fill
+              className="object-contain"
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
-        </div>
-
-        <div className="flex justify-center items-center">
-          <Image
-            src="/images/user.png"
-            width={1440}
-            height={300}
-            alt="Picture of the author"
-          />
         </div>
       </div>
     </div>
