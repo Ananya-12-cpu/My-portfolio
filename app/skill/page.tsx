@@ -1,8 +1,11 @@
 // pages/index.js
-'use client'
-import { useRouter } from 'next/navigation';
-import { TbSquareRoundedArrowRight, TbSquareRoundedArrowLeft } from "react-icons/tb";
-import { motion } from 'framer-motion';
+"use client";
+import { useRouter } from "next/navigation";
+import {
+  TbSquareRoundedArrowRight,
+  TbSquareRoundedArrowLeft,
+} from "react-icons/tb";
+import { motion } from "framer-motion";
 
 function SkillPage() {
   const router = useRouter();
@@ -16,58 +19,39 @@ function SkillPage() {
   };
 
   const skills = [
-    { name: 'React Js', level: 90, color: '#61DAFB' },
-    { name: 'Next Js', level: 95, color: '#000000' },
-    { name: 'JavaScript', level: 88, color: '#F7DF1E' },
-    { name: 'TypeScript', level: 70, color: '#3178C6' },
-    { name: 'React Hook Form', level: 95, color: '#E34F26' },
-    { name: 'Formik', level: 90, color: '#1572B6' },
+    { name: "React Js", level: 90, color: "#61DAFB" },
+    { name: "Next Js", level: 95, color: "#000000" },
+    { name: "JavaScript", level: 88, color: "#F7DF1E" },
+    { name: "TypeScript", level: 70, color: "#3178C6" },
+    { name: "React Hook Form", level: 95, color: "#E34F26" },
+    { name: "Formik", level: 90, color: "#1572B6" },
 
+    { name: "Tanstack Query", level: 60, color: "#F7DF1E" },
+    { name: "Next Auth", level: 75, color: "#61DAFB" },
+    { name: "Next Int (i18n)", level: 75, color: "#000000" },
+    { name: "Redux Toolkit", level: 70, color: "#7952B3" },
 
-    { name: 'Tanstack Query', level: 60, color: '#F7DF1E' },
-    { name: 'Next Auth', level: 75, color: '#61DAFB' },
-    { name: 'Next Int (i18n)', level: 75, color: '#000000' },
-    { name: 'Redux Toolkit', level: 70, color: '#7952B3' },
-
-
-    { name: 'Bootstrap', level: 85, color: '#3178C6' },
-    { name: 'Material UI', level: 85, color: '#61DAFB' },
-    { name: 'Radix UI', level: 85, color: '#3178C6' },
-    { name: 'Tailwind css', level: 75, color: '#7952B3' },
-    { name: 'Shadcn UI', level: 65, color: '#E34F26' },
-    { name: 'Chakra UI', level: 85, color: '#61DAFB' },
-
-
+    { name: "Bootstrap", level: 85, color: "#3178C6" },
+    { name: "Material UI", level: 85, color: "#61DAFB" },
+    { name: "Radix UI", level: 85, color: "#3178C6" },
+    { name: "Tailwind css", level: 75, color: "#7952B3" },
+    { name: "Shadcn UI", level: 65, color: "#E34F26" },
+    { name: "Chakra UI", level: 85, color: "#61DAFB" },
   ];
 
   return (
     <div className="min-h-screen flex items-center bg-gradient-to-b from-gray-900 to-gray-800">
-      {/* Navigation Buttons */}
-      <button
-        className="fixed left-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 z-10 transition-all duration-300 hover:scale-110"
-        onClick={goToPreviousPage}
-      >
-        <TbSquareRoundedArrowLeft size={32} className="text-gray-700" />
-      </button>
-
-      <button
-        className="fixed right-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 z-10 transition-all duration-300 hover:scale-110"
-        onClick={goToNextPage}
-      >
-        <TbSquareRoundedArrowRight size={32} className="text-gray-700" />
-      </button>
-
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-800"
         >
           {/* Technical Skills */}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">
-          Technical Skills
-              </span>
+            Technical Skills
+          </span>
         </motion.h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -80,8 +64,12 @@ function SkillPage() {
               className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
             >
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-gray-800">{skill.name}</h3>
-                <span className="text-sm font-medium text-gray-600">{skill.level}%</span>
+                <h3 className="text-xl font-semibold text-gray-800">
+                  {skill.name}
+                </h3>
+                <span className="text-sm font-medium text-gray-600">
+                  {skill.level}%
+                </span>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-2.5">
                 <motion.div
