@@ -1,11 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import {
-  TbSquareRoundedArrowRight,
-  TbSquareRoundedArrowLeft,
-} from "react-icons/tb";
 
 const projects = [
   {
@@ -36,16 +31,15 @@ const projects = [
 ];
 
 function WorkPage() {
-  const router = useRouter();
-
-  const goToPreviousPage = () => {
-    router.push("/skill");
-  };
-
-  return (
-    <div className="relative min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 py-12 px-4 sm:px-6 lg:px-16">
+  return (<>
+    {/* <div className="relative min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 py-12 px-4 sm:px-6 lg:px-16"> */}
       {/* Page Content */}
-      <div className="max-w-7xl mx-auto border border-gray-700/30 rounded-3xl p-6 sm:p-8 backdrop-blur-sm bg-gray-900/20">
+      {/* <div className="max-w-7xl mx-auto border border-gray-700/30 rounded-3xl p-6 sm:p-8 backdrop-blur-sm bg-gray-900/20"> */}
+      
+      <div className="min-h-screen flex items-center bg-gradient-to-b from-gray-900 to-gray-800">
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-16">
+      
         <div className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             My Work
@@ -117,7 +111,7 @@ function WorkPage() {
         </div>
       </div>
     </div>
-  );
+  </>);
 }
 
 export default WorkPage;

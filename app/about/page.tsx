@@ -1,24 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import {
-  TbSquareRoundedArrowRight,
-  TbSquareRoundedArrowLeft,
-} from "react-icons/tb";
+
 import { motion } from "framer-motion";
 
 function AboutPage() {
-  const router = useRouter();
-
-  const goToPreviousPage = () => {
-    router.push("/");
-  };
-
-  const goToNextPage = () => {
-    router.push("/skill");
-  };
-
   return (
     <div className="min-h-screen flex items-center bg-gradient-to-b from-gray-900 to-gray-800">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

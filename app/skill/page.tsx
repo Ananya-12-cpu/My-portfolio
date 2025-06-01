@@ -1,23 +1,8 @@
-// pages/index.js
 "use client";
-import { useRouter } from "next/navigation";
-import {
-  TbSquareRoundedArrowRight,
-  TbSquareRoundedArrowLeft,
-} from "react-icons/tb";
+
 import { motion } from "framer-motion";
 
 function SkillPage() {
-  const router = useRouter();
-
-  const goToPreviousPage = () => {
-    router.push("/about");
-  };
-
-  const goToNextPage = () => {
-    router.push("/works");
-  };
-
   const skills = [
     { name: "React Js", level: 90, color: "#61DAFB" },
     { name: "Next Js", level: 95, color: "#000000" },
