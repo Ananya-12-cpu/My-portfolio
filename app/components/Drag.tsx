@@ -45,4 +45,6 @@ const ballStyle: React.CSSProperties = {
   borderRadius: "50%",
   pointerEvents: "none", // allow interaction through the ball
   zIndex: 9999, // ensure it's on top
+  opacity: 0.5
+
 };

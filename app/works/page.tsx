@@ -12,30 +12,28 @@ const projects = [
     live: "#",
     github: "https://github.com/Ananya-12-cpu/My-Components",
   },
-  // {
-  //   title: "Calculator App",
-  //   image: "/images/calculator.png",
-  //   description: "A simple and responsive calculator app with basic operations and animations.",
-  //   tech: ["HTML", "CSS", "JavaScript"],
-  //   live: "#",
-  //   github: "#",
-  // },
-  // {
-  //   title: "Fictional Tours Site",
-  //   image: "/images/tours.png",
-  //   description: "A fictional travel site (Work in Progress) with basic booking UI and responsive layout.",
-  //   tech: ["Next.js", "CSS Modules", "TypeScript"],
-  //   live: "#",
-  //   github: "#",
-  // },
+  {
+    title: "E-commerce",
+    image: "/images/ecommerce.jpg",
+    description:
+      "A component-driven demo project using Next Js. + Tailwind + Framer Motion",
+    tech: ["React", "Tailwind", "Framer Motion","Redux toolkit"],
+    live: "#",
+    github: "https://github.com/Ananya-12-cpu/ecommerce",
+  },
+  {
+    title: "Express API",
+    image: "/images/api.jpg",
+    description: "A functional swagger site with User authentication with Role and Todo and File upload",
+    tech: ["Express.js", "JavaScript", "MySql"],
+    live: "#",
+    github: "#",
+  },
 ];
 
 function WorkPage() {
   return (<>
-    {/* <div className="relative min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 py-12 px-4 sm:px-6 lg:px-16"> */}
-      {/* Page Content */}
-      {/* <div className="max-w-7xl mx-auto border border-gray-700/30 rounded-3xl p-6 sm:p-8 backdrop-blur-sm bg-gray-900/20"> */}
-      
+    
       <div className="min-h-screen flex items-center bg-gradient-to-b from-gray-900 to-gray-800">
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">
