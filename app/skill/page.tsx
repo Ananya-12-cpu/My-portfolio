@@ -11,6 +11,12 @@ function SkillPage() {
     { name: "React Hook Form", level: 95, color: "#E34F26" },
     { name: "Formik", level: 90, color: "#1572B6" },
 
+
+        { name: "Node Js", level: 60, color: "#61DAFB" },
+    { name: "Express Js", level: 65, color: "#000000" },
+    { name: "MySql", level: 70, color: "#F7DF1E" },
+    
+
     { name: "Tanstack Query", level: 60, color: "#F7DF1E" },
     { name: "Next Auth", level: 75, color: "#61DAFB" },
     { name: "Next Int (i18n)", level: 75, color: "#000000" },
