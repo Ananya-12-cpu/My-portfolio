@@ -87,6 +87,11 @@ function AboutPage() {
                 "Next Auth",
                 "Next Int (i18n)",
                 "Redux Toolkit",
+
+                "Node Js",
+                "Express Js",
+                "MySql",
+
                 "Bootstrap",
                 "Material UI",
                 "Radix UI",
