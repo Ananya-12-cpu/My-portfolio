@@ -17,9 +17,18 @@ const projects = [
     image: "/images/ecommerce.jpg",
     description:
       "A component-driven demo project using Next Js. + Tailwind + Framer Motion",
-    tech: ["React", "Tailwind", "Framer Motion","Redux toolkit"],
+    tech: ["React", "Tailwind", "Framer Motion", "Redux toolkit"],
     live: "#",
     github: "https://github.com/Ananya-12-cpu/ecommerce",
+  },
+  {
+    title: "Rent-RBAC",
+    image: "/images/rent.png",
+    description:
+      "A component-driven demo project using Next Js. + Tailwind",
+    tech: ["Next.js", "Tailwind", "Framer Motion", "Redux toolkit"],
+    live: "#",
+    github: "https://github.com/Ananya-12-cpu/Rent_property.git",
   },
   {
     title: "Express API",
@@ -33,11 +42,11 @@ const projects = [
 
 function WorkPage() {
   return (<>
-    
-      <div className="min-h-screen flex items-center bg-gradient-to-b from-gray-900 to-gray-800">
+
+    <div className="min-h-screen flex items-center bg-gradient-to-b from-gray-900 to-gray-800">
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">
-      
+
         <div className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             My Work

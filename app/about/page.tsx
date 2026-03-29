@@ -90,6 +90,7 @@ function AboutPage() {
 
                 "Node Js",
                 "Express Js",
+                "Nest Js",
                 "MySql",
 
                 "Bootstrap",

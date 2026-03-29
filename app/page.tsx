@@ -11,10 +11,10 @@ export default function Home() {
   return (
     <div>
       {/* Water effect behind everything */}
-      {/* <WaterDroplets count={40} /> */}
+      <WaterDroplets />
 
       {/* <TechStackNetwork /> */}
-<ParticleNetwork/>
+{/* <ParticleNetwork/> */}
       {/* Pointer-following ball */}
       {/* <Drag /> */}
       <section id="banner">

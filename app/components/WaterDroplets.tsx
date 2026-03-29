@@ -13,8 +13,9 @@ const createDroplet = (index: number) => ({
   opacity: 0.3 + Math.random() * 0.5,
 });
 
-export default function WaterDroplets({ count = 30 }: { count?: number }) {
-  const [droplets, setDroplets] = useState<any[]>([]);
+export default function WaterDroplets( ) {
+  const [droplets, setDroplets] = useState<any[]>([]); 
+let count = 40
 
   useEffect(() => {
     setDroplets(Array.from({ length: count }, (_, i) => createDroplet(i)));
@@ -28,10 +29,10 @@ export default function WaterDroplets({ count = 30 }: { count?: number }) {
           initial={{ y: "-10vh", opacity: 0 }}
           animate={{ y: "110vh", opacity: [drop.opacity, 0] }}
           transition={{
-            delay: drop.delay,
+            // delay: drop.delay,
             duration: drop.duration,
             repeat: Infinity,
-            ease: "linear",
+            ease: "easeInOut",
           }}
           style={{
             position: "fixed",
@@ -43,7 +44,7 @@ export default function WaterDroplets({ count = 30 }: { count?: number }) {
             borderRadius: "50%",
             pointerEvents: "none",
             zIndex: 1,
-            filter: "blur(1px)",
+            // filter: "blur(1px)",
           }}
         />
       ))}

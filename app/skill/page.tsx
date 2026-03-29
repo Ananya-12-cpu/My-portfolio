@@ -14,6 +14,7 @@ function SkillPage() {
 
         { name: "Node Js", level: 60, color: "#61DAFB" },
     { name: "Express Js", level: 65, color: "#000000" },
+     { name: "Nest Js", level: 70, color: "#7952B3" },
     { name: "MySql", level: 70, color: "#F7DF1E" },
     
 

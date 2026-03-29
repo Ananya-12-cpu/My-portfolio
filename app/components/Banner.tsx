@@ -41,7 +41,7 @@ function PortfolioBanner() {
             <div className="flex flex-wrap gap-4 pt-4">
               <OutlineButton
                 text="My Skills"
-                RenderFunction={() => router.push("/skill")}
+                RenderFunction={() => router.push("#skill")}
               />
             </div>
           </div>
