@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 
+import SkillCodeBlock from "@/app/components/SkillCodeBlock";
+
 function SkillPage() {
   const skills = [
     { name: "React Js", level: 90 },
@@ -35,9 +37,7 @@ function SkillPage() {
       {/* Main Content */}
       <div className="relative container mx-auto px-4 py-16">
         <div className="text-center mb-12">
-          <span className="font-mono-ai text-xs text-cyan-400 tracking-widest uppercase">
-            // capabilities
-          </span>
+          
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +50,9 @@ function SkillPage() {
           </motion.h1>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <SkillCodeBlock />
+
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {skills.map((skill, index) => (
             <motion.div
               key={skill.name}
@@ -79,7 +81,7 @@ function SkillPage() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );

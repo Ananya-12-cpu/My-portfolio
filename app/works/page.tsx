@@ -49,9 +49,7 @@ function WorkPage() {
       <div className="relative container mx-auto px-4 py-16">
 
         <div className="text-center mb-16">
-          <span className="font-mono-ai text-xs text-cyan-400 tracking-widest uppercase">
-            // projects
-          </span>
+           
           <h1 className="text-4xl sm:text-5xl font-bold mt-2 mb-4">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 text-glow">
               My Work
