@@ -54,4 +54,26 @@ function OutlineButton({ text, RenderFunction }: buttonProps) {
   );
 }
 
-export { SolidButton, SoftButton, OutlineButton };
+function GlowButton({ text, RenderFunction }: buttonProps) {
+  return (
+    <button
+      onClick={RenderFunction}
+      className="relative inline-flex items-center gap-2 px-6 py-3 rounded-lg font-mono-ai text-sm font-medium text-cyan-100 bg-white/5 border border-cyan-400/40 backdrop-blur-sm transition-all duration-300 hover:border-cyan-300 hover:text-white hover:shadow-[0_0_25px_-4px_rgba(34,211,238,0.7)]"
+    >
+      {text}
+    </button>
+  );
+}
+
+function GhostButton({ text, RenderFunction }: buttonProps) {
+  return (
+    <button
+      onClick={RenderFunction}
+      className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-mono-ai text-sm font-medium text-gray-300 border border-white/10 transition-all duration-300 hover:border-white/30 hover:text-white"
+    >
+      {text}
+    </button>
+  );
+}
+
+export { SolidButton, SoftButton, OutlineButton, GlowButton, GhostButton };

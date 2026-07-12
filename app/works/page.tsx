@@ -43,15 +43,21 @@ const projects = [
 function WorkPage() {
   return (<>
 
-    <div className="min-h-screen flex items-center bg-gradient-to-b from-gray-900 to-gray-800">
+    <div className="relative min-h-screen flex items-center bg-[#05060a] overflow-hidden">
+      <div className="absolute inset-0 grid-fade opacity-50" />
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-16">
+      <div className="relative container mx-auto px-4 py-16">
 
         <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            My Work
+          <span className="font-mono-ai text-xs text-cyan-400 tracking-widest uppercase">
+            // projects
+          </span>
+          <h1 className="text-4xl sm:text-5xl font-bold mt-2 mb-4">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 text-glow">
+              My Work
+            </span>
           </h1>
-          <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
             Here are some projects I've built to showcase my front-end
             development skills. From UI experiments to full websites.
           </p>
@@ -61,7 +67,7 @@ function WorkPage() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group bg-gray-800/50 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-gray-200 cursor-pointer"
+              className="group glass-panel neon-border rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer"
             >
               <div className="relative overflow-hidden">
                 <Image
@@ -71,20 +77,20 @@ function WorkPage() {
                   height={300}
                   className="w-full h-48 sm:h-56 object-cover transform group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#05060a]/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-white mb-2">
                   {project.title}
                 </h3>
-                <p className="text-gray-300 text-sm sm:text-base mb-4">
+                <p className="text-gray-400 text-sm sm:text-base mb-4">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech, i) => (
                     <span
                       key={i}
-                      className="text-xs bg-gray-700/50 text-gray-200 px-3 py-1 rounded-full"
+                      className="text-xs font-mono-ai text-cyan-200 border border-cyan-400/20 bg-cyan-400/5 px-3 py-1 rounded-full"
                     >
                       {tech}
                     </span>
