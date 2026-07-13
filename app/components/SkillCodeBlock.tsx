@@ -79,7 +79,7 @@ const LINES: Token[][] = [
   [{ text: "  },", color: GRAY }],
   keyValueString(
     "loves",
-    "building scalable, high-performance , clean and maintainable web applications with a focus on user experience and accessibility.",
+    "building scalable, high-performance web applications with a focus on user experience and accessibility.",
     2,
     true
   ),
@@ -93,7 +93,7 @@ function SkillCodeBlock() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="mx-auto mb-14 rounded-2xl overflow-hidden glass-panel neon-border"
+      className="max-w-4xl mx-auto mb-14 rounded-2xl overflow-hidden glass-panel neon-border"
     >
       {/* title bar */}
       <div className="flex items-center gap-2 px-4 py-3 bg-black/30 border-b border-white/10">
