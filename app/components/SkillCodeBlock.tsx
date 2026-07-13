@@ -10,7 +10,12 @@ const GRAY = "#9ca3af";
 const KEY = "#22d3ee";
 const STRING = "#34d399";
 
-function keyValueString(key: string, value: string, indent: number, last = false): Token[] {
+function keyValueString(
+  key: string,
+  value: string,
+  indent: number,
+  last = false,
+): Token[] {
   const pad = " ".repeat(indent);
   return [
     { text: `${pad}${key}`, color: KEY },
@@ -81,7 +86,7 @@ const LINES: Token[][] = [
     "loves",
     "building scalable, high-performance web applications with a focus on user experience and accessibility.",
     2,
-    true
+    true,
   ),
   [{ text: "};", color: GRAY }],
 ];

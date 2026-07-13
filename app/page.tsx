@@ -3,6 +3,7 @@ import AboutPage from "./about/page";
 import SkillPage from "./skill/page";
 import WorkPage from "./works/page";
 import NeuralBackground from "./components/NeuralBackground";
+import ExperiencePage from "./experience/page";
 
 export default function Home() {
   return (
@@ -24,6 +25,10 @@ export default function Home() {
 
       <section id="works">
         <WorkPage />
+      </section>
+
+      <section id="experience">
+        <ExperiencePage />
       </section>
     </div>
   );

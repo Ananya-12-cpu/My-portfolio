@@ -4,7 +4,6 @@ import Image from "next/image";
 
 import { motion } from "framer-motion";
 
-import ProjectsCodeBlock from "@/app/components/ProjectsCodeBlock";
 
 const projects = [
   {
@@ -106,8 +105,8 @@ function WorkPage() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto"
           >
-            Here are some projects I&apos;ve built to showcase my front-end
-            development skills. From UI experiments to full websites.
+            Here are some projects I&apos;ve built to showcase my
+            development skills. From UI experiments to Full stack websites.
           </motion.p>
         </div>
 

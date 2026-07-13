@@ -7,7 +7,7 @@ const NAV_LINKS = [
   // { href: "#about", label: "About" },
   { href: "#skill", label: "Skills" },
   { href: "#works", label: "Works" },
-  // { href: "#contact", label: "Contact" },
+  { href: "#experience", label: "Experience" },
 ];
 
 const Navbar = () => {
