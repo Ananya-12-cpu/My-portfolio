@@ -15,9 +15,9 @@ export default function Home() {
         <PortfolioBanner />
       </section>
 
-      {/* <section id="about">
+      <section id="about">
         <AboutPage />
-      </section> */}
+      </section>
 
       <section id="skill">
         <SkillPage />
