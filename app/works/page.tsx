@@ -18,7 +18,7 @@ const projects = [
   },
   {
     title: "E-commerce",
-    image: "/images/my-ecommerce.JPG",
+    image: "/images/my-ecommerce.jpg",
     description:
       "A component-driven demo project using Next Js. + Tailwind + Framer Motion",
     tech: ["React", "Tailwind", "Framer Motion", "Redux toolkit"],
