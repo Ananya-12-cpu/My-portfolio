@@ -7,7 +7,7 @@ import AboutIllustration from "@/app/components/AboutIllustration";
 import { GlowButton, GhostButton } from "@/app/components/Buttons";
 
 const STATS = [
-  { label: "Years Experience", value: "4.6+" },
+  { label: "Years Experience", value: "3+" },
   { label: "Technologies", value: "20+" },
   { label: "Projects Shipped", value: "10+" },
 ];
@@ -35,8 +35,8 @@ const QUICK_FACTS = [
   },
   {
     label: "LinkedIn",
-    value: "ananya-putatunda",
-    href: "https://www.linkedin.com/in/ananya-putatunda-4a1618211/",
+    value: "https://www.linkedin.com/in/ananya-putatunda/",
+    href: "https://www.linkedin.com/in/ananya-putatunda/",
     icon: (
       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.783 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-1.337-.024-3.059-1.865-3.059-1.868 0-2.155 1.459-2.155 2.964v5.699h-3v-11h2.881v1.5h.041c.401-.761 1.381-1.563 2.842-1.563 3.039 0 3.6 2.001 3.6 4.601v6.462z" />
@@ -205,7 +205,7 @@ function AboutPage() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="text-lg text-gray-400 leading-relaxed"
               >
-                Frontend Developer with 4.6 years of experience
+                Frontend Developer with 3+ years of experience
                 building scalable, high-performance web applications using
                 React, Next.js, and TypeScript. I specialize in SSR, SSG, and
                 ISR, with hands-on expertise across SaaS platforms,
@@ -272,7 +272,7 @@ function AboutPage() {
               transition={{ duration: 0.5, delay: 0.7 }}
               className="flex flex-wrap gap-4"
             >
-              <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/Ananya_Putatunda_Resume.pdf" target="_blank" rel="noopener noreferrer">
                 <GlowButton text="Download Resume ↓" />
               </a>
               <GhostButton

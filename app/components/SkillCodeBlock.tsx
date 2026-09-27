@@ -47,7 +47,7 @@ const LINES: Token[][] = [
   ],
   keyValueString("name", "Ananya Putatunda", 2),
   keyValueString("role", "Frontend Developer", 2),
-  keyValueString("experience", "4.6+ years", 2),
+  keyValueString("experience", "3+ years", 2),
   [
     { text: "  stack", color: KEY },
     { text: ": {", color: GRAY },

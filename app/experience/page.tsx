@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const STATS = [
-  { label: "Years Experience", value: "4.6+" },
+  { label: "Years Experience", value: "3+" },
   { label: "Projects Delivered", value: "6+" },
 //   { label: "Active Users Impacted", value: "8k+" },
 ];
@@ -15,7 +15,7 @@ const PROJECTS = [
     subtitle: "SEO & Marketing Platform",
     role: "Frontend Developer",
     company: "W3era Web Technology Pvt. Ltd.",
-    period: "May 2026 – Present",
+    period: "April 2026 – Present",
     tech: ["Next.js 15 (App Router)", "React", "SEO"],
     highlights: [
       "Built and maintained core UI using Next.js App Router (v15), improving routing performance and maintainability",
@@ -78,7 +78,7 @@ const PROJECTS = [
     subtitle: "Netherlands · Healthcare",
     role: "Frontend Developer",
     company: "Rasacode Technologies Pvt. Ltd.",
-    period: "June 2023 – Dec 2024",
+    period: "Oct 2023 – Dec 2024",
     tech: ["Next.js", "Redux Toolkit", "React Query", "NextAuth", "JWT", "Next-intl"],
     highlights: [
       "Built a scalable healthcare platform supporting, active users across multiple hospitals",
@@ -93,7 +93,7 @@ const PROJECTS = [
     subtitle: "B2B",
     role: "Frontend Developer",
     company: "Rasacode Technologies Pvt. Ltd.",
-    period: "Jan 2022 – Dec 2024",
+    period: "Jan 2024 – Dec 2024",
     tech: ["React", "REST APIs", "State Management"],
     highlights: [
       "Designed booking workflows for one-way and round-trip flights, improving completion rate by 35%",
@@ -107,7 +107,7 @@ const PROJECTS = [
     subtitle: "Internal Tooling",
     role: "Frontend Developer",
     company: "Rasacode Technologies Pvt. Ltd.",
-    period: "Jan 2022 – Dec 2024",
+    period: "Jan 2024 – Dec 2024",
     tech: ["React", "RBAC", "Data Tables"],
     highlights: [
       "Developed a centralized admin dashboard with advanced RBAC, improving security by 50%",
@@ -159,7 +159,7 @@ function ExperiencePage() {
             transition={{ duration: 0.5, delay: 0.15 }}
             className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto"
           >
-            Frontend Developer with 4.6 years building scalable,
+            Frontend Developer with 3+ years building scalable,
             high-performance web applications across SaaS, healthcare, and
             travel domains.
           </motion.p>
@@ -185,7 +185,7 @@ function ExperiencePage() {
             </p>
           </div>
           <div className="text-left sm:text-right font-mono-ai text-xs text-gray-400 space-y-1">
-            <p>On site · Jaipur, Rajasthan - May 2026 – Present</p>
+            <p>On site · Jaipur, Rajasthan - April 2026 – Present</p>
           </div>
         </motion.div>
 
@@ -206,7 +206,7 @@ function ExperiencePage() {
             </p>
           </div>
           <div className="text-left sm:text-right font-mono-ai text-xs text-gray-400 space-y-1">
-            <p>On-site · Uttarpara, WB — Dec 2021 – Nov 2025</p>
+            <p>On-site · Uttarpara, WB — Oct 2023 – Nov 2025</p>
             <p>Remote — Dec 2025 – April 2026</p>
           </div>
         </motion.div>
