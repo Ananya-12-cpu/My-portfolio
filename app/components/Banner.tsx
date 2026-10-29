@@ -113,7 +113,7 @@ function PortfolioBanner() {
                   >
                     {tag}
                   </span>
-                )
+                ),
               )}
             </div>
           </div>
@@ -166,7 +166,7 @@ function PortfolioBanner() {
               transition={{ duration: 0.6, delay: 0.75 }}
               className="absolute top-2 sm:top-6 right-0 sm:right-2 glass-panel neon-border rounded-xl px-4 py-3 font-mono-ai"
             >
-              <p className="text-sm text-white font-semibold">4+ yrs</p>
+              <p className="text-sm text-white font-semibold">3+ yrs</p>
               <p className="text-[10px] text-gray-400 uppercase tracking-widest">
                 Experience
               </p>
