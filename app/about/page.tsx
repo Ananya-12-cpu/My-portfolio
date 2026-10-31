@@ -72,7 +72,7 @@ const SKILL_GROUPS = [
   },
   {
     label: "Backend & Data",
-    skills: ["Node Js", "Express Js", "Nest Js", "MySql"],
+    skills: ["Node.js", "Express.js", "Nest.js", "MySQL"],
   },
   {
     label: "UI & Styling",

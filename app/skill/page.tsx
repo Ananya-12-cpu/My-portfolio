@@ -6,17 +6,17 @@ import SkillCodeBlock from "@/app/components/SkillCodeBlock";
 
 function SkillPage() {
   const skills = [
-    { name: "React Js", level: 90 },
-    { name: "Next Js", level: 95 },
+    { name: "React.js", level: 90 },
+    { name: "Next.js", level: 95 },
     { name: "JavaScript", level: 88 },
     { name: "TypeScript", level: 70 },
     { name: "React Hook Form", level: 95 },
     { name: "Formik", level: 90 },
 
-    { name: "Node Js", level: 60 },
-    { name: "Express Js", level: 65 },
-    { name: "Nest Js", level: 70 },
-    { name: "MySql", level: 70 },
+    { name: "Node.js", level: 60 },
+    { name: "Express.js", level: 65 },
+    { name: "Nest.js", level: 70 },
+    { name: "MySQl", level: 70 },
 
     { name: "Tanstack Query", level: 60 },
     { name: "Next Auth", level: 75 },
