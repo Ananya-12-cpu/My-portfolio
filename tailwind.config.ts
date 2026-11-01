@@ -8,6 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        tail: {
+          "0%,100%": { transform: "rotate(-5deg)" },
+          "50%": { transform: "rotate(7deg)" },
+        },
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

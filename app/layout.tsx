@@ -15,7 +15,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Ananya — AI-Augmented Frontend Engineer",
+  title: "Ananya Putatunda — Frontend Developer",
   description:
     "Portfolio of Ananya Putatunda, a frontend developer with 3+ years of experience building scalable React and Next.js applications.",
   openGraph: {
@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-[#0a0612] antialiased`}
       >
          <Navbar />
         {children}
