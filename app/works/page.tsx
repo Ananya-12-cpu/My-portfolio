@@ -1,8 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import IndustrialProjects from "../components/IndustrialProjects";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 
 const projects = [
@@ -72,6 +74,8 @@ const LiveIcon = () => (
 );
 
 function WorkPage() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
   return (
     <div className="relative min-h-screen bg-[#05060a] overflow-hidden ">
       <div className="absolute inset-0 grid-fade opacity-50" />
@@ -95,7 +99,7 @@ function WorkPage() {
             className="text-4xl sm:text-5xl font-bold mt-2 mb-4"
           >
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 text-glow">
-             Projects
+             Personal Projects
             </span>
           </motion.h1>
           <motion.p
@@ -105,101 +109,142 @@ function WorkPage() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto"
           >
-            Here are some projects I&apos;ve built to showcase my
-            development skills. From UI experiments to Full stack websites.
+            Personal projects I&apos;ve built on my own to explore ideas and
+            sharpen my skills. From UI experiments to full stack websites.
           </motion.p>
         </div>
 
         {/* <ProjectsCodeBlock /> */}
 
-        {/* Bento-style showcase grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: (index % 4) * 0.1 }}
-              whileHover={{ y: -8 }}
-              className={`group relative rounded-2xl overflow-hidden bg-gradient-to-br from-cyan-400/40 via-white/5 to-purple-500/40 p-[1.5px] shadow-[0_0_50px_-20px_rgba(34,211,238,0.35)] transition-shadow duration-300 hover:shadow-[0_0_60px_-14px_rgba(34,211,238,0.5)] ${
-                project.featured ? "md:col-span-2" : ""
-              }`}
-            >
-              <div className="relative h-full rounded-[calc(1rem-1.5px)] bg-[#0a0c14] overflow-hidden">
-                <div
-                  className={`relative overflow-hidden ${
-                    project.featured ? "h-64 sm:h-80" : "h-48 sm:h-56"
-                  }`}
-                >
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0c14] via-[#0a0c14]/40 to-transparent" />
+        {/* Timeline */}
+        <div className="max-w-5xl mx-auto">
+          <div className="relative pl-8 sm:pl-10">
+            <div className="absolute left-[9px] sm:left-[13px] top-2 bottom-2 w-px bg-gradient-to-b from-cyan-400/50 via-purple-500/30 to-transparent" />
 
-                  {/* number badge */}
-                  <span className="absolute top-4 left-4 font-mono-ai text-[10px] text-cyan-300 bg-[#05060a]/70 backdrop-blur-sm border border-cyan-400/20 rounded-full px-2.5 py-1">
-                    {String(index + 1).padStart(2, "0")}
+            {projects.map((project, index) => {
+              const isOpen = openIndex === index;
+              return (
+                <motion.div
+                  key={project.title}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: (index % 6) * 0.08 }}
+                  className="relative mb-6"
+                >
+                  {/* timeline dot */}
+                  <span className="absolute -left-8 sm:-left-10 top-6 w-[18px] h-[18px] rounded-full bg-[#05060a] border-2 border-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.6)] flex items-center justify-center">
+                    <span className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500" />
                   </span>
 
-                  {project.featured && (
-                    <span className="absolute top-4 right-4 font-mono-ai text-[10px] uppercase tracking-widest text-purple-200 bg-purple-500/10 backdrop-blur-sm border border-purple-400/30 rounded-full px-2.5 py-1">
-                      Featured
-                    </span>
-                  )}
-
-                  {/* hover overlay actions */}
-                  <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[#05060a]/50 backdrop-blur-[2px]">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="glass-panel neon-border rounded-full px-4 py-2 text-sm font-mono-ai text-white flex items-center gap-2 translate-y-3 group-hover:translate-y-0 transition-transform duration-300 hover:text-cyan-300"
+                  <div className="glass-panel neon-border rounded-2xl overflow-hidden transition-shadow duration-300 hover:shadow-[0_0_50px_-16px_rgba(34,211,238,0.4)]">
+                    <button
+                      type="button"
+                      onClick={() => setOpenIndex(isOpen ? null : index)}
+                      className="w-full text-left px-6 py-5 flex items-start justify-between gap-4"
                     >
-                      <GithubIcon />
-                      Code
-                    </a>
-                    {project.live !== "#" && (
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="glass-panel neon-border rounded-full px-4 py-2 text-sm font-mono-ai text-white flex items-center gap-2 translate-y-3 group-hover:translate-y-0 transition-transform duration-300 delay-75 hover:text-purple-300"
+                      <div>
+                        <h3 className="text-lg sm:text-xl font-semibold text-white flex flex-wrap items-baseline gap-2">
+                          {project.title}
+                          {project.featured && (
+                            <span className="font-mono-ai text-[10px] uppercase tracking-widest text-purple-200 bg-purple-500/10 border border-purple-400/30 rounded-full px-2.5 py-1">
+                              Featured
+                            </span>
+                          )}
+                        </h3>
+                        <p className="font-mono-ai text-xs text-cyan-300 mt-1">
+                          {project.tech.join(" · ")}
+                        </p>
+                      </div>
+                      <motion.span
+                        animate={{ rotate: isOpen ? 180 : 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="shrink-0 mt-1 text-cyan-300"
+                        aria-hidden
                       >
-                        <LiveIcon />
-                        Live
-                      </a>
-                    )}
-                  </div>
-                </div>
+                        <svg
+                          className="w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </motion.span>
+                    </button>
 
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-2 flex items-center gap-2">
-                    {project.title}
-                    <span className="h-px flex-1 bg-gradient-to-r from-cyan-400/40 to-transparent" />
-                  </h3>
-                  <p className="text-gray-400 text-sm sm:text-base mb-4">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
-                      <span
-                        key={tech}
-                        className="text-xs font-mono-ai text-cyan-200 border border-cyan-400/20 bg-cyan-400/5 px-3 py-1 rounded-full hover:border-cyan-400/50 hover:bg-cyan-400/10 transition-colors duration-300"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                          className="overflow-hidden"
+                        >
+                          <div className="px-6 pb-6 pt-4 space-y-4 border-t border-white/5">
+                            <div className="relative h-48 sm:h-64 rounded-xl overflow-hidden">
+                              <Image
+                                src={project.image}
+                                alt={project.title}
+                                fill
+                                className="object-cover"
+                              />
+                            </div>
+                            <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
+                              {project.description}
+                            </p>
+                            <div className="flex flex-wrap gap-2">
+                              {project.tech.map((tech) => (
+                                <span
+                                  key={tech}
+                                  className="text-xs font-mono-ai text-cyan-200 border border-cyan-400/20 bg-cyan-400/5 px-3 py-1 rounded-full hover:border-cyan-400/50 hover:bg-cyan-400/10 transition-colors duration-300"
+                                >
+                                  {tech}
+                                </span>
+                              ))}
+                            </div>
+                            <div className="flex gap-3 pt-1">
+                              <a
+                                href={project.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="glass-panel neon-border rounded-full px-4 py-2 text-sm font-mono-ai text-white flex items-center gap-2 hover:text-cyan-300 transition-colors"
+                              >
+                                <GithubIcon />
+                                Code
+                              </a>
+                              {project.live !== "#" && (
+                                <a
+                                  href={project.live}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="glass-panel neon-border rounded-full px-4 py-2 text-sm font-mono-ai text-white flex items-center gap-2 hover:text-purple-300 transition-colors"
+                                >
+                                  <LiveIcon />
+                                  Live
+                                </a>
+                              )}
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Industrial projects */}
+        <div className="max-w-5xl mx-auto mt-24">
+          <IndustrialProjects />
         </div>
       </div>
     </div>

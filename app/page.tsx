@@ -23,13 +23,15 @@ export default function Home() {
         <SkillPage />
       </section>
 
+       <section id="experience">
+        <ExperiencePage />
+      </section>
+
       <section id="works">
         <WorkPage />
       </section>
 
-      <section id="experience">
-        <ExperiencePage />
-      </section>
+     
     </div>
   );
 }
