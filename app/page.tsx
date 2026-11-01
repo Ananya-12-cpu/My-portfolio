@@ -4,12 +4,16 @@ import SkillPage from "./skill/page";
 import WorkPage from "./works/page";
 import NeuralBackground from "./components/NeuralBackground";
 import ExperiencePage from "./experience/page";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import ScrollEffects from "./components/ScrollEffects";
 
 export default function Home() {
   return (
     <div className="bg-[#05060a]">
       {/* Neural network effect behind everything */}
       <NeuralBackground />
+      <ScrollEffects />
 
       <section id="banner">
         <PortfolioBanner />
@@ -31,7 +35,11 @@ export default function Home() {
         <WorkPage />
       </section>
 
-     
+      <section id="contact">
+        <Contact />
+      </section>
+
+      <Footer />
     </div>
   );
 }

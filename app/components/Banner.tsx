@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { GlowButton, GhostButton } from "./Buttons";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const ROLES = [
   "AI-Augmented Frontend Engineer",
@@ -54,6 +55,17 @@ function PortfolioBanner() {
       <div className="absolute -top-32 left-1/3 w-[36rem] h-[36rem] rounded-full bg-cyan-500/10 blur-[120px]" />
       <div className="absolute bottom-0 right-1/4 w-[28rem] h-[28rem] rounded-full bg-purple-500/10 blur-[120px]" />
 
+      <motion.a
+        href="#about"
+        aria-label="Scroll to about section"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2 font-mono-ai text-[10px] uppercase tracking-widest text-gray-500 hover:text-cyan-300"
+        animate={{ y: [0, 8, 0] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+      >
+        scroll
+        <span className="h-8 w-px bg-gradient-to-b from-cyan-400 to-transparent" />
+      </motion.a>
+
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
@@ -102,6 +114,26 @@ function PortfolioBanner() {
                 text="See Projects"
                 RenderFunction={() => router.push("#works")}
               />
+            </div>
+
+            <div className="flex items-center gap-3 pt-2">
+              {[
+                { href: "https://github.com/Ananya-12-cpu", label: "GitHub", Icon: FaGithub },
+                { href: "https://www.linkedin.com/in/ananya-putatunda/", label: "LinkedIn", Icon: FaLinkedin },
+                { href: "mailto:p.ananya2025@gmail.com", label: "Email", Icon: FaEnvelope },
+              ].map(({ href, label, Icon }) => (
+                <motion.a
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel="noopener noreferrer"
+                  whileHover={{ y: -3, scale: 1.1 }}
+                  className="flex h-10 w-10 items-center justify-center rounded-full glass-panel neon-border text-gray-300 hover:text-cyan-300"
+                >
+                  <Icon className="h-4 w-4" />
+                </motion.a>
+              ))}
             </div>
 
             <div className="flex flex-wrap gap-2 pt-2">

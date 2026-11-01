@@ -277,7 +277,7 @@ function AboutPage() {
               </a>
               <GhostButton
                 text="View Experience →"
-                RenderFunction={() => router.push("/experience")}
+                RenderFunction={() => router.push("#experience")}
               />
             </motion.div>
 

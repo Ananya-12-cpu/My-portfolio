@@ -17,7 +17,13 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Ananya — AI-Augmented Frontend Engineer",
   description:
-    "Portfolio of Ananya, a frontend engineer building intelligent, AI-powered web experiences.",
+    "Portfolio of Ananya Putatunda, a frontend developer with 3+ years of experience building scalable React and Next.js applications.",
+  openGraph: {
+    title: "Ananya Putatunda — Frontend Developer",
+    description:
+      "3+ years building scalable React & Next.js apps across SaaS, healthcare and travel.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

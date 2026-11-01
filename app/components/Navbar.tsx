@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const NAV_LINKS = [
@@ -8,11 +8,28 @@ const NAV_LINKS = [
   { href: "#skill", label: "Skills" },
   { href: "#experience", label: "Experience" },
   { href: "#works", label: "Works" },
-  
+  { href: "#contact", label: "Contact" },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [active, setActive] = useState("");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) setActive(`#${e.target.id}`);
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px" },
+    );
+    NAV_LINKS.forEach(({ href }) => {
+      const el = document.querySelector(href);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -39,10 +56,20 @@ const Navbar = () => {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="relative text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-mono-ai transition-colors duration-200 group"
+                    className={`relative px-3 py-2 rounded-md text-sm font-mono-ai transition-colors duration-200 group ${
+                      active === link.href
+                        ? "text-white"
+                        : "text-gray-300 hover:text-white"
+                    }`}
                   >
                     {link.label}
-                    <span className="absolute left-3 right-3 -bottom-0.5 h-px bg-gradient-to-r from-cyan-400 to-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                    <span
+                      className={`absolute left-3 right-3 -bottom-0.5 h-px bg-gradient-to-r from-cyan-400 to-purple-500 transition-transform duration-300 origin-left ${
+                        active === link.href
+                          ? "scale-x-100"
+                          : "scale-x-0 group-hover:scale-x-100"
+                      }`}
+                    />
                   </Link>
                 ))}
               </div>
@@ -52,6 +79,7 @@ const Navbar = () => {
             <button
               onClick={toggleMenu}
               type="button"
+              aria-expanded={isOpen}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white hover:bg-white/5 focus:outline-none"
             >
               <span className="sr-only">Open main menu</span>
@@ -102,7 +130,9 @@ const Navbar = () => {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-gray-300 hover:bg-white/5 hover:text-white block px-3 py-2 rounded-md text-base font-mono-ai"
+                className={`${
+                  active === link.href ? "text-cyan-300 bg-white/5" : "text-gray-300"
+                } hover:bg-white/5 hover:text-white block px-3 py-2 rounded-md text-base font-mono-ai`}
               >
                 {link.label}
               </Link>
