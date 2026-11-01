@@ -1,10 +1,100 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { StageHeading, StageShell } from "@/app/components/race/Stage";
+import LapList, { LapItem } from "@/app/components/race/LapList";
 import { TRACKS } from "@/app/data/portfolio";
+import { JOBS } from "@/app/data/jobs";
+
+const pad = (n: number) => String(n).padStart(2, "0");
+
+const trackItems: LapItem[] = TRACKS.map((track, i) => ({
+  key: track.title,
+  flag: pad(i + 1),
+  eyebrow: `Track ${pad(i + 1)} · ${track.tech.join(" · ")}`,
+  title: track.title,
+  badge: track.featured ? "★ Featured" : undefined,
+  body: (
+    <>
+      <div className="relative h-48 overflow-hidden rounded-xl sm:h-64">
+        <Image
+          src={track.image}
+          alt={`${track.title} preview`}
+          fill
+          sizes="(max-width: 1024px) 90vw, 60rem"
+          className="object-cover"
+        />
+        <div className="checker absolute inset-x-0 bottom-0 h-2 opacity-80" />
+      </div>
+      <p className="text-sm leading-relaxed text-gray-300 sm:text-base">{track.description}</p>
+      <div className="flex flex-wrap gap-2">
+        {track.tech.map((t) => (
+          <span
+            key={t}
+            className="font-mono-ai rounded-full border border-pink-400/25 bg-pink-400/5 px-3 py-1 text-xs text-pink-100"
+          >
+            {t}
+          </span>
+        ))}
+      </div>
+      <div className="flex gap-3">
+        <a
+          href={track.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-mono-ai inline-flex items-center gap-2 rounded-lg bg-white/5 px-4 py-2 text-sm text-white ring-1 ring-white/10 transition-colors hover:bg-pink-500 hover:ring-pink-400"
+        >
+          <FaGithub /> Code
+        </a>
+        {track.live !== "#" && (
+          <a
+            href={track.live}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono-ai inline-flex items-center gap-2 rounded-lg bg-white/5 px-4 py-2 text-sm text-white ring-1 ring-white/10 transition-colors hover:bg-cyan-500 hover:ring-cyan-400"
+          >
+            <FaExternalLinkAlt className="text-xs" /> Live
+          </a>
+        )}
+      </div>
+    </>
+  ),
+}));
+
+const jobItems: LapItem[] = JOBS.map((job, i) => {
+  const lap = pad(JOBS.length - i);
+  return {
+    key: job.title,
+    flag: lap,
+    eyebrow: `Lap ${lap} · ${job.period}`,
+    title: job.title,
+    subtitle: job.subtitle,
+    meta: `${job.role} · ${job.company}`,
+    body: (
+      <>
+        <ul className="space-y-2">
+          {job.highlights.map((h) => (
+            <li key={h} className="flex gap-2.5 text-sm leading-relaxed text-gray-300 sm:text-base">
+              <span className="mt-1.5 shrink-0 text-yellow-300">▸</span>
+              <span>{h}</span>
+            </li>
+          ))}
+        </ul>
+        <div className="flex flex-wrap gap-2">
+          {job.tech.map((t) => (
+            <span
+              key={t}
+              className="font-mono-ai rounded-full border border-pink-400/25 bg-pink-400/5 px-3 py-1 text-xs text-pink-100"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+      </>
+    ),
+  };
+});
 
 function WorkPage() {
   return (
@@ -13,77 +103,28 @@ function WorkPage() {
         stage="04"
         title="Pick a"
         accent="Track"
-        sub="Personal projects built to explore ideas and sharpen skills, from UI experiments to full stack builds."
+        sub="Client and product work from my professional roles, followed by personal projects built to explore ideas and sharpen skills."
       />
 
-      <div className="grid gap-6 md:grid-cols-2">
-        {TRACKS.map((track, i) => (
-          <motion.article
-            key={track.title}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5, delay: (i % 2) * 0.12 }}
-            whileHover={{ y: -8 }}
-            className="panel panel-hover group flex flex-col overflow-hidden rounded-2xl"
-          >
-            <div className="relative h-52 overflow-hidden sm:h-60">
-              <Image
-                src={track.image}
-                alt={`${track.title} preview`}
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#14101f] via-transparent to-transparent" />
-              <span className="display skew-card absolute left-4 top-4 bg-pink-500 px-3 py-1 text-xs text-white">
-                <span className="unskew inline-block">Track {String(i + 1).padStart(2, "0")}</span>
-              </span>
-              {track.featured && (
-                <span className="font-mono-ai absolute right-4 top-4 rounded bg-yellow-300 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-black">
-                  ★ Featured
-                </span>
-              )}
-              <div className="checker absolute inset-x-0 bottom-0 h-2 opacity-80" />
-            </div>
-
-            <div className="flex flex-1 flex-col p-5">
-              <h3 className="display text-2xl text-white">{track.title}</h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-400">{track.description}</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {track.tech.map((t) => (
-                  <span
-                    key={t}
-                    className="font-mono-ai rounded-full border border-cyan-400/25 bg-cyan-400/5 px-2.5 py-1 text-[11px] text-cyan-100"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-              <div className="mt-5 flex gap-3">
-                <a
-                  href={track.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-mono-ai inline-flex items-center gap-2 rounded-lg bg-white/5 px-4 py-2 text-sm text-white ring-1 ring-white/10 transition-colors hover:bg-pink-500 hover:ring-pink-400"
-                >
-                  <FaGithub /> Code
-                </a>
-                {track.live !== "#" && (
-                  <a
-                    href={track.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-mono-ai inline-flex items-center gap-2 rounded-lg bg-white/5 px-4 py-2 text-sm text-white ring-1 ring-white/10 transition-colors hover:bg-cyan-500 hover:ring-cyan-400"
-                  >
-                    <FaExternalLinkAlt className="text-xs" /> Live
-                  </a>
-                )}
-              </div>
-            </div>
-          </motion.article>
-        ))}
+      <div className="mb-8">
+        <h3 className="display text-3xl text-white sm:text-4xl">
+          Industrial <span className="text-sunset">Tracks</span>
+        </h3>
+        <p className="mt-2 text-sm text-gray-400 sm:text-base">
+          Client and product work delivered as part of my professional roles.
+        </p>
       </div>
+      <LapList items={jobItems} />
+
+      <div className="mb-8 mt-24">
+        <h3 className="display text-3xl text-white sm:text-4xl">
+          Personal <span className="text-sunset">Tracks</span>
+        </h3>
+        <p className="mt-2 text-sm text-gray-400 sm:text-base">
+          Projects I built on my own, from UI experiments to full stack builds.
+        </p>
+      </div>
+      <LapList items={trackItems} />
     </StageShell>
   );
 }
